@@ -57,3 +57,5 @@ class RengongzhinengSpider(scrapy.Spider):
         create_data = response.xpath("//td[@class='time']/text()").extract()[0].strip()
         author = response.xpath("//td[@class='aut']/a/text()").extract()[0]
         pass
+        
+
