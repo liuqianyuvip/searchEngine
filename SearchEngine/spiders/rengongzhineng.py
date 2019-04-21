@@ -51,10 +51,10 @@ class RengongzhinengSpider(scrapy.Spider):
     def parse_detail(self,response):
         #提取文章的具体字段
 
-        title = response.xpath("/html/body/div[6]/div[1]/div[1]/div/h1/text()").extract()[0].strip()
+        title = response.xpath("/html/body/div[5]/div[1]/div[1]/div/h1/text()").extract()[0].strip()
         print(title)
-        abstract =response.xpath("/html/body/div[6]/div[1]/div[1]/div/div[2]/text()").extract()[1].strip()
-        content = response.xpath("/html/body/div[6]/div[1]/div[2]/div/div[1]/div[1]").extract()[0]
+        abstract =response.xpath("/html/body/div[5]/div[1]/div[1]/div/div[2]/text()").extract()[1].strip()
+        content = response.xpath("/html/body/div[5]/div[1]/div[2]/div/div[1]/div[1]").extract()[0]
         create_data = response.xpath("//td[@class='time']/text()").extract()[0].strip()
         author = response.xpath("//td[@class='aut']/a/text()").extract()[0]
         pass

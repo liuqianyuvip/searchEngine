@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ec63346c-cd4c-4b7a-b88d-712d37634476" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchEngine/spiders/rengongzhineng.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchEngine/spiders/rengongzhineng.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/课程作业/elassticsearch kibana crud操作.md" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SearchEngine/spiders/rengongzhineng.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+            <state relative-caret-position="175">
+              <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -41,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../anaconda3/envs/searchEng/lib/python3.6/site-packages/scrapy/http/response/text.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
+            <state relative-caret-position="1819">
               <caret line="118" selection-start-line="118" selection-end-line="118" />
             </state>
           </provider>
@@ -79,6 +81,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,7 +108,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,24 +208,25 @@
       <workItem from="1554950811507" duration="334000" />
       <workItem from="1554961418761" duration="6564000" />
       <workItem from="1555567674523" duration="6000" />
-      <workItem from="1555568227316" duration="1098000" />
+      <workItem from="1555568227316" duration="1294000" />
+      <workItem from="1555820276187" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25074000" />
+    <option name="totallyTimeSpent" value="25868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17310444" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17525035" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.55060244" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.52771086" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.55060244" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -243,19 +246,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SearchEngine/spiders/rengongzhineng.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SearchEngine$main.coverage" NAME="main Coverage Results" MODIFIED="1555569894876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SearchEngine$main.coverage" NAME="main Coverage Results" MODIFIED="1555822104542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/lllserarch/lib/python3.5/site-packages/scrapy/__init__.py" />
@@ -372,15 +364,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/searchEng/lib/python3.6/site-packages/scrapy/http/response/text.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
+        <state relative-caret-position="1819">
           <caret line="118" selection-start-line="118" selection-end-line="118" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SearchEngine/spiders/rengongzhineng.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="175">
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
