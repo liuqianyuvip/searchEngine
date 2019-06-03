@@ -44,7 +44,7 @@ ROBOTSTXT_OBEY = False
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
 #}
-
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
@@ -69,10 +69,11 @@ ITEM_PIPELINES = {
    'SearchEngine.pipelines.SearchenginePipeline': 300,
   # 'scrapy.pipelines.images.ImagesPipeline': 1,
    'SearchEngine.pipelines.ArticleImagePipeline': 1,
+   'SearchEngine.pipelines.ElasticsearchPipline':300
 }
-IMAGES_URLS_FIELD = "front_image_url"
-project_dir = os.path.abspath(os.path.dirname(__file__))
-IMAGES_STORE = os.path.join(project_dir,'images')
+# IMAGES_URLS_FIELD = "front_image_url"
+# project_dir = os.path.abspath(os.path.dirname(__file__))
+# IMAGES_STORE = os.path.join(project_dir,'images')
 
 IMAGES_MIN_HEIGHT = 100
 IMAGES_MIN_WIDTH = 100
