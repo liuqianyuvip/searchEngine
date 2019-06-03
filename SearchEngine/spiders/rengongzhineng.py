@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 import scrapy
+from scrapy.selector import Selector
 import re
 from scrapy.http import Request
 from urllib import parse
 import time
+from SearchEngine.items import AIArticleItem
+from SearchEngine.utils.common import get_md5
+
 
 class RengongzhinengSpider(scrapy.Spider):
     name = 'rengongzhineng'
     allowed_domains = ['www.leiphone.com']
-    #start_urls = ['http://www.leiphone.com/']
+    # start_urls = ['http://www.leiphone.com/']
     start_urls = ['https://www.leiphone.com/category/ai']
 
     def decorate(fun):
@@ -37,28 +41,45 @@ class RengongzhinengSpider(scrapy.Spider):
 
         # 获取文章列表页中的url并交给解析函数进行具体字段的解析
 
-        post_urls = response.css(".word h3 a::attr(href)").extract()
-        for post_url in post_urls:
-            yield Request(url=parse.urljoin(response.url,post_url),callback=self.parse_detail)
+        post_nodes = response.css(".box div")
+        print(type(post_nodes))
+        for post_node in post_nodes:
 
-        #提取下一页并交给scrapy进行下载
-        next_url = response.css(".next::attr(href)").extract()[1]
-        next_url = parse.urljoin(response.url,next_url)
-        if next_url:
-            yield Request(url=next_url, callback=self.parse)
+            image_url = post_node.css("img::attr(src)").extract_first("")
+            print(image_url)
+            post_url = post_node.css("h3 a::attr(href)").extract_first("")
+            print(post_url)
+            # yield Request(url=parse.urljoin(response.url, post_url), meta={"front_image_url": image_url},
+            #               callback=self.parse_detail)
+
+        # 提取下一页并交给scrapy进行下载
+        # next_url = response.css(".next::attr(href)").extract()[1]
+        # next_url = parse.urljoin(response.url, next_url)
+        # if next_url:
+        #     yield Request(url=next_url, callback=self.parse)
 
     @decorate
-    def parse_detail(self,response):
-        #提取文章的具体字段
+    def parse_detail(self, response):
 
-        title = response.xpath("/html/body/div[5]/div[1]/div[1]/div/h1/text()").extract()[0].strip()
+        article_item = AIArticleItem()
+
+        # 提取文章的具体字段
+
+        title = response.xpath('/html/body/div[6]/div[1]/div[1]/div/h1/text()').extract_first("").strip()
         print(title)
 
+        abstract = response.xpath("/html/body/div[6]/div[1]/div[1]/div/div[2]/text()").extract()[1].strip()
+        content = response.xpath("/html/body/div[6]/div[1]/div[2]/div/div[1]/div[1]").extract_first("")
+        create_date = response.xpath("//td[@class='time']/text()").extract_first("").strip()
+        author = response.xpath("//td[@class='aut']/a/text()").extract_first("")
 
-        abstract =response.xpath("/html/body/div[5]/div[1]/div[1]/div/div[2]/text()").extract()[1].strip()
-        content = response.xpath("/html/body/div[5]/div[1]/div[2]/div/div[1]/div[1]").extract()[0]
-        create_data = response.xpath("//td[@class='time']/text()").extract()[0].strip()
-        author = response.xpath("//td[@class='aut']/a/text()").extract()[0]
-        pass
-        
-
+        article_item["url_object_id"] = get_md5(response.url)
+        article_item["title"] = title
+        article_item["url"] = response.url
+        article_item["abstract"] = abstract
+        article_item["front_image_url"] = [front_image_url]
+        article_item["content"] = content
+        article_item["create_date"] = create_date
+        article_item["author"] = author
+        # 传入pipelines
+        yield article_item
