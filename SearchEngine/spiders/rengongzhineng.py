@@ -104,7 +104,7 @@ class RengongzhinengSpider(scrapy.Spider):
         article_item["channel"] = "ai"
         article_item["url_object_id"] = get_md5(response.url)
         article_item["title"] = title
-        article_item["url"] = response.url
+        article_item["origin_url"] = response.url
         article_item["abstract"] = abstract
         # article_item["front_image_url"] = [front_image_url]
         article_item["content"] = newContent

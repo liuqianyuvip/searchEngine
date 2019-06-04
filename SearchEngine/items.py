@@ -27,7 +27,7 @@ class AIArticleItem(scrapy.Item):
     # front_image_url = scrapy.Field()
     # front_image_path = scrapy.Field()
 
-    url = scrapy.Field()
+    origin_url = scrapy.Field()
 
     url_object_id = scrapy.Field()
 
@@ -41,13 +41,16 @@ class AIArticleItem(scrapy.Item):
         # author = Text()
         # abstract = Text(analyzer="ik_max_word")
         # create_date = Date()
-        article_type.url = self["url"]
+        article_type.origin_url = self["origin_url"]
         article_type.title = self["title"]
         article_type.channel = self["channel"]
         article_type.content = self["content"]
         article_type.author = self["author"]
         article_type.abstract = self["abstract"]
         article_type.create_date = self["create_date"]
+        article_type.title_suggest = self["title"]
+        article_type.abstract_suggest =self["abstract"]
+        article_type.content_suggest = self["content"]
         article_type.save()
         return
 
